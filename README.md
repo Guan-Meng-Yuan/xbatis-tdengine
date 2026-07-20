@@ -1,4 +1,4 @@
-# Xbatis TDengine extension
+# Xbatis TDengine Extension
 
 This module registers TDengine as an Xbatis database type and provides helpers
 for TDengine-specific functions, supertable DDL, subtables, and time windows.
@@ -8,9 +8,9 @@ It targets TDengine 3.x and does not bundle the JDBC driver.
 
 ```xml
 <dependency>
-    <groupId>cn.xbatis</groupId>
+    <groupId>com.guanmengyuan</groupId>
     <artifactId>xbatis-tdengine</artifactId>
-    <version>1.10.6</version>
+    <version>1.0.0</version>
 </dependency>
 <dependency>
     <groupId>com.taosdata.jdbc</groupId>
@@ -48,6 +48,14 @@ mybatis:
 
 Explicitly setting `database-id` is recommended so startup does not need a
 connection just to identify the database.
+
+The Java API is under:
+
+```java
+import com.guanmengyuan.xbatis.tdengine.TdengineFunctions;
+import com.guanmengyuan.xbatis.tdengine.TdengineSql;
+import com.guanmengyuan.xbatis.tdengine.TdengineSupport;
+```
 
 ## Entity mapping
 

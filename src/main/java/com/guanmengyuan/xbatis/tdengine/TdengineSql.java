@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2026, Ai东 (abc-127@live.cn) xbatis.
+ * Copyright (c) 2026 Guan Mengyuan.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.xbatis.tdengine;
+package com.guanmengyuan.xbatis.tdengine;
 
 import java.time.temporal.TemporalAccessor;
 import java.util.Map;
