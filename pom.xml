@@ -114,6 +114,11 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>3.2.8</version>
+                        <configuration>
+                            <bestPractices>true</bestPractices>
+                            <keyname>${env.MAVEN_GPG_KEY_FINGERPRINT}</keyname>
+                            <useAgent>false</useAgent>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -130,7 +135,7 @@
                         <version>0.11.0</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <publishingServerId>central</publishingServerId>
+                            <publishingServerId>oss</publishingServerId>
                             <autoPublish>true</autoPublish>
                             <waitUntil>published</waitUntil>
                             <deploymentName>${project.groupId}:${project.artifactId}:${project.version}</deploymentName>
