@@ -15,7 +15,11 @@
  */
 package com.guanmengyuan.xbatis.tdengine;
 
+import cn.xbatis.ddl.auto.DDLAuto;
+import cn.xbatis.ddl.auto.DDLBuilder;
+import com.guanmengyuan.xbatis.tdengine.ddl.TdengineDDLBuilder;
 import db.sql.api.DbTypes;
+import db.sql.api.IDbType;
 
 /**
  * Entry point used to register TDengine before MyBatis builds its configuration.
@@ -33,5 +37,33 @@ public final class TdengineSupport {
     public static TdengineDbType initialize() {
         DbTypes.register(TdengineDbType.class);
         return TdengineDbType.TDENGINE;
+    }
+
+    /**
+     * 获取支持 TDengine 超级表与 @Tag 识别的 DDLBuilder
+     *
+     * @return TdengineDDLBuilder 实例
+     */
+    public static DDLBuilder getDDLBuilder() {
+        return new TdengineDDLBuilder();
+    }
+
+    /**
+     * 创建预先配置好 TdengineDDLBuilder 的 DDLAuto 实例
+     *
+     * @param dbType 数据库类型
+     * @return DDLAuto 实例
+     */
+    public static DDLAuto createDDLAuto(IDbType dbType) {
+        return DDLAuto.of(dbType).builder(getDDLBuilder());
+    }
+
+    /**
+     * 创建默认 TDengine 的 DDLAuto 实例
+     *
+     * @return DDLAuto 实例
+     */
+    public static DDLAuto createDDLAuto() {
+        return createDDLAuto(initialize());
     }
 }

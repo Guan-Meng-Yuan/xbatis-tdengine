@@ -1,0 +1,35 @@
+server:
+  port: 8097
+
+solon:
+  app:
+    name: 'xbatis-tdengine-test'
+  dataSources:
+    tsdb!:
+      type: com.zaxxer.hikari.HikariDataSource
+      driverClassName: com.taosdata.jdbc.ws.WebSocketDriver
+      jdbcUrl: ${TDENGINE_JDBC_URL}
+      username: ${TDENGINE_USERNAME}
+      password: ${TDENGINE_PASSWORD}
+    mysql:
+      type: com.zaxxer.hikari.HikariDataSource
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: ${MYSQL_JDBC_URL}
+      username: ${MYSQL_USERNAME}
+      password: ${MYSQL_PASSWORD}
+
+mybatis:
+  tsdb:
+    ddlAuto:
+      - entityPackages: com.guanmengyuan.xbatis.tdengine.tdengine.model
+        mode: UPDATE
+        dbType: TDENGINE
+    mappers:
+      - "com.guanmengyuan.xbatis.tdengine.tdengine.mapper"
+  mysql:
+    ddlAuto:
+      - entityPackages: com.guanmengyuan.xbatis.tdengine.mysql.model
+        mode: UPDATE
+        dbType: MYSQL
+    mappers:
+      - "com.guanmengyuan.xbatis.tdengine.mysql.mapper"

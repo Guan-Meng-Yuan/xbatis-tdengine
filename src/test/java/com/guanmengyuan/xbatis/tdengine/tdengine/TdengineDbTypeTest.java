@@ -13,9 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.guanmengyuan.xbatis.tdengine;
+package com.guanmengyuan.xbatis.tdengine.tdengine;
 
 import cn.xbatis.core.dbType.DefaultDbTypeParser;
+import com.guanmengyuan.xbatis.tdengine.TdengineDbType;
+import com.guanmengyuan.xbatis.tdengine.TdengineFunctions;
+import com.guanmengyuan.xbatis.tdengine.TdengineSupport;
 import db.sql.api.DbTypes;
 import db.sql.api.impl.cmd.basic.Table;
 import db.sql.api.impl.cmd.executor.Query;

@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.guanmengyuan.xbatis.tdengine;
+package com.guanmengyuan.xbatis.tdengine.tdengine;
 
+import com.guanmengyuan.xbatis.tdengine.TdengineSql;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedHashMap;
